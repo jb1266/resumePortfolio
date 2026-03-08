@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>John Barr — Cloud Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="cur-dot"></div>
+<div id="cur-ring"></div>
+<canvas id="dotCanvas"></canvas>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">john<span>.cloud</span></div>
+  <div class="nav-links">
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#focus">Focus</a>
+    <a href="#contact" class="nav-cta">Let's Connect</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <canvas id="heroCanvas"></canvas>
+  <div class="hero-inner reveal">
+    <div class="hero-badge">&#9729; AWS Certified Cloud Practitioner</div>
+    <h1 class="hero-name">Hi, I'm <span>John Barr</span></h1>
+    <p class="hero-title">Cloud Computing Student &nbsp;·&nbsp; AWS &amp; Azure Certified &nbsp;·&nbsp; AI Enthusiast</p>
+    <p class="hero-desc">Passionate about cloud computing and AI with hands-on AWS projects in security architecture, CI/CD pipelines, and self-hosted infrastructure — and a strong hardware background ready for a professional cloud environment.</p>
+    <div class="hero-stats">
+      <div><span class="stat-num">2</span><span class="stat-label">AWS Certs</span></div>
+      <div><span class="stat-num">3</span><span class="stat-label">Cloud Projects</span></div>
+    </div>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-primary">View My Work &#8595;</a>
+      <a href="#contact" class="btn-secondary">Get In Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROJECTS ══ -->
+<section id="projects">
+  <div class="section-label-dark reveal">Featured Work</div>
+  <h2 class="section-title-dark reveal">AWS Projects</h2>
+  <p class="section-sub-dark reveal">Personal cloud projects showcasing security-focused infrastructure, CI/CD automation, CDN delivery, and self-hosted solutions on AWS.</p>
+
+  <div class="projects-grid">
+
+    <!-- PROJECT 1 -->
+    <div class="project-card reveal">
+      <div class="proj-img" style="background:linear-gradient(135deg,#0d1117,#1a2744,#0a1628)">
+        <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">
+          <defs><marker id="ar1" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto"><path d="M0,0 L0,5 L5,2.5z" fill="rgba(96,165,250,.9)"/></marker></defs>
+          <rect x="4" y="65" width="44" height="30" rx="7" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.2)" stroke-width="1.2"/>
+          <text x="26" y="83" fill="white" font-family="monospace" font-size="7" text-anchor="middle">GitHub</text>
+          <line x1="48" y1="80" x2="60" y2="80" stroke="#60a5fa" stroke-width="1.4" stroke-dasharray="3,2" marker-end="url(#ar1)"/>
+          <rect x="60" y="65" width="54" height="30" rx="7" fill="rgba(249,115,22,.18)" stroke="rgba(249,115,22,.55)" stroke-width="1.2"/>
+          <text x="87" y="78" fill="white" font-family="monospace" font-size="6.5" text-anchor="middle">CodePipeline</text>
+          <text x="87" y="89" fill="rgba(255,255,255,.45)" font-family="monospace" font-size="6" text-anchor="middle">Build + Deploy</text>
+          <line x1="114" y1="80" x2="126" y2="80" stroke="#60a5fa" stroke-width="1.4" stroke-dasharray="3,2" marker-end="url(#ar1)"/>
+          <rect x="126" y="65" width="50" height="30" rx="7" fill="rgba(16,185,129,.18)" stroke="rgba(16,185,129,.55)" stroke-width="1.2"/>
+          <text x="151" y="77" fill="white" font-family="monospace" font-size="6.5" text-anchor="middle">Systems</text>
+          <text x="151" y="88" fill="rgba(255,255,255,.45)" font-family="monospace" font-size="6" text-anchor="middle">Manager</text>
+          <line x1="176" y1="80" x2="188" y2="80" stroke="#60a5fa" stroke-width="1.4" stroke-dasharray="3,2" marker-end="url(#ar1)"/>
+          <rect x="188" y="12" width="108" height="136" rx="10" fill="rgba(255,255,255,.02)" stroke="rgba(255,255,255,.1)" stroke-width="1" stroke-dasharray="4,3"/>
+          <text x="242" y="26" fill="rgba(255,255,255,.28)" font-family="monospace" font-size="7" text-anchor="middle">VPC</text>
+          <rect x="196" y="32" width="92" height="26" rx="7" fill="rgba(6,182,212,.18)" stroke="rgba(6,182,212,.55)" stroke-width="1.2"/>
+          <text x="242" y="42" fill="white" font-family="monospace" font-size="6.5" text-anchor="middle">App Load Balancer</text>
+          <text x="242" y="52" fill="rgba(255,255,255,.4)" font-family="monospace" font-size="5.5" text-anchor="middle">Public · WAF · HTTPS (ACM)</text>
+          <line x1="242" y1="58" x2="242" y2="68" stroke="#60a5fa" stroke-width="1.2" stroke-dasharray="2,2" marker-end="url(#ar1)"/>
+          <rect x="196" y="68" width="92" height="26" rx="7" fill="rgba(139,92,246,.22)" stroke="rgba(139,92,246,.55)" stroke-width="1.2"/>
+          <text x="242" y="78" fill="white" font-family="monospace" font-size="6.5" text-anchor="middle">EC2 Instances</text>
+          <text x="242" y="88" fill="rgba(255,255,255,.4)" font-family="monospace" font-size="5.5" text-anchor="middle">Private Subnet (tagged)</text>
+          <line x1="242" y1="94" x2="242" y2="104" stroke="rgba(139,92,246,.45)" stroke-width="1.2" stroke-dasharray="2,2" marker-end="url(#ar1)"/>
+          <rect x="196" y="104" width="92" height="26" rx="7" fill="rgba(249,115,22,.14)" stroke="rgba(249,115,22,.38)" stroke-width="1.2"/>
+          <text x="242" y="114" fill="white" font-family="monospace" font-size="6.5" text-anchor="middle">NAT Gateway</text>
+          <text x="242" y="124" fill="rgba(255,255,255,.35)" font-family="monospace" font-size="5.5" text-anchor="middle">Public Subnet to Internet</text>
+          <rect x="4" y="112" width="56" height="20" rx="5" fill="rgba(239,68,68,.12)" stroke="rgba(239,68,68,.35)" stroke-width="1"/>
+          <text x="32" y="125" fill="rgba(255,255,255,.55)" font-family="monospace" font-size="6" text-anchor="middle">NACL + WAF</text>
+        </svg>
+        <span class="proj-img-label">Architecture Diagram</span>
+      </div>
+      <div class="proj-body">
+        <div class="proj-icon" style="background:linear-gradient(135deg,#8b5cf6,#a78bfa)">&#128737;</div>
+        <h3 class="proj-name">Security-Focused Web Hosting with CI/CD (EC2)</h3>
+        <p class="proj-desc">Hosts a web app on EC2 instances in a private subnet, fronted by an Application Load Balancer in the public subnet with WAF and HTTPS via ACM. A full CI/CD pipeline listens to GitHub repo changes through CodePipeline &#8594; CodeBuild &#8594; CodeDeploy, updating tagged EC2 instances via AWS Systems Manager. NACL provides network-layer security.</p>
+        <div class="tech-tags">
+          <a class="tech-tag" href="https://aws.amazon.com/ec2/" target="_blank">EC2</a>
+          <a class="tech-tag" href="https://aws.amazon.com/systems-manager/" target="_blank">Systems Manager</a>
+          <a class="tech-tag" href="https://aws.amazon.com/codepipeline/" target="_blank">CodePipeline</a>
+          <a class="tech-tag" href="https://aws.amazon.com/codebuild/" target="_blank">CodeBuild</a>
+          <a class="tech-tag" href="https://aws.amazon.com/codedeploy/" target="_blank">CodeDeploy</a>
+          <a class="tech-tag" href="https://aws.amazon.com/elasticloadbalancing/" target="_blank">ALB</a>
+          <a class="tech-tag" href="https://aws.amazon.com/waf/" target="_blank">WAF</a>
+          <a class="tech-tag" href="https://aws.amazon.com/certificate-manager/" target="_blank">ACM</a>
+          <a class="tech-tag" href="https://aws.amazon.com/vpc/" target="_blank">VPC / NACL</a>
+          <a class="tech-tag" href="https://github.com" target="_blank">GitHub</a>
+        </div>
+        <div class="proj-links">
+          <a href="#" class="btn-code">&#8997; Code</a>
+          <a href="#" class="btn-demo">&#8599; Blog</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 2 -->
+    <div class="project-card reveal delay-1">
+      <div class="proj-img" style="background:linear-gradient(135deg,#071a2e,#0d2b45,#0a1f38)">
+        <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">
+          <defs><marker id="ar2" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto"><path d="M0,0 L0,5 L5,2.5z" fill="rgba(6,182,212,.9)"/></marker></defs>
+          <circle cx="28" cy="44" r="18" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.18)" stroke-width="1.2"/>
+          <text x="28" y="40" fill="rgba(255,255,255,.7)" font-family="monospace" font-size="6.5" text-anchor="middle">USER</text>
+          <text x="28" y="51" fill="rgba(255,255,255,.35)" font-family="monospace" font-size="5.5" text-anchor="middle">Browser</text>
+          <line x1="46" y1="44" x2="62" y2="44" stroke="#06b6d4" stroke-width="1.4" stroke-dasharray="3,2" marker-end="url(#ar2)"/>
+          <rect x="62" y="30" width="70" height="28" rx="7" fill="rgba(249,115,22,.18)" stroke="rgba(249,115,22,.55)" stroke-width="1.2"/>
+          <text x="97" y="41" fill="white" font-family="monospace" font-size="7" text-anchor="middle">CloudFront CDN</text>
+          <text x="97" y="52" fill="rgba(255,255,255,.4)" font-family="monospace" font-size="5.5" text-anchor="middle">Global Edge Delivery</text>
+          <rect x="68" y="65" width="58" height="20" rx="6" fill="rgba(239,68,68,.14)" stroke="rgba(239,68,68,.38)" stroke-width="1"/>
+          <text x="97" y="78" fill="rgba(255,255,255,.55)" font-family="monospace" font-size="6.5" text-anchor="middle">AWS WAF</text>
+          <line x1="97" y1="58" x2="97" y2="65" stroke="rgba(239,68,68,.4)" stroke-width="1" stroke-dasharray="2,2"/>
+          <line x1="132" y1="44" x2="148" y2="44" stroke="#06b6d4" stroke-width="1.4" stroke-dasharray="3,2" marker-end="url(#ar2)"/>
+          <rect x="148" y="30" width="68" height="28" rx="7" fill="rgba(16,185,129,.18)" stroke="rgba(16,185,129,.55)" stroke-width="1.2"/>
+          <text x="182" y="41" fill="white" font-family="monospace" font-size="7" text-anchor="middle">S3 Bucket</text>
+          <text x="182" y="52" fill="rgba(255,255,255,.4)" font-family="monospace" font-size="5.5" text-anchor="middle">Static Web Hosting</text>
+          <line x1="216" y1="44" x2="230" y2="44" stroke="#06b6d4" stroke-width="1.4" stroke-dasharray="3,2" marker-end="url(#ar2)"/>
+          <rect x="230" y="30" width="66" height="28" rx="7" fill="rgba(37,99,235,.18)" stroke="rgba(37,99,235,.55)" stroke-width="1.2"/>
+          <text x="263" y="40" fill="white" font-family="monospace" font-size="6.5" text-anchor="middle">CodePipeline</text>
+          <text x="263" y="51" fill="rgba(255,255,255,.4)" font-family="monospace" font-size="5.5" text-anchor="middle">Auto Deploy to S3</text>
+          <rect x="94" y="108" width="112" height="30" rx="8" fill="rgba(139,92,246,.18)" stroke="rgba(139,92,246,.45)" stroke-width="1.2"/>
+          <text x="150" y="121" fill="white" font-family="monospace" font-size="7" text-anchor="middle">CloudWatch</text>
+          <text x="150" y="132" fill="rgba(255,255,255,.4)" font-family="monospace" font-size="5.5" text-anchor="middle">Monitoring and Alerts</text>
+          <line x1="150" y1="58" x2="150" y2="108" stroke="rgba(139,92,246,.3)" stroke-width="1" stroke-dasharray="2,2"/>
+        </svg>
+        <span class="proj-img-label">Architecture Diagram</span>
+      </div>
+      <div class="proj-body">
+        <div class="proj-icon" style="background:linear-gradient(135deg,#06b6d4,#22d3ee)">&#127760;</div>
+        <h3 class="proj-name">Security-Focused Static Web Hosting with CI/CD (S3 + CDN)</h3>
+        <p class="proj-desc">Static web application stored in S3 with static hosting enabled, distributed globally via CloudFront CDN with AWS WAF attached at the edge. A CodePipeline CI/CD workflow automatically deploys code changes directly to the S3 bucket. CloudWatch provides real-time monitoring and alerting across the stack.</p>
+        <div class="tech-tags">
+          <a class="tech-tag" href="https://aws.amazon.com/s3/" target="_blank">S3</a>
+          <a class="tech-tag" href="https://aws.amazon.com/cloudfront/" target="_blank">CloudFront</a>
+          <a class="tech-tag" href="https://aws.amazon.com/waf/" target="_blank">WAF</a>
+          <a class="tech-tag" href="https://aws.amazon.com/codepipeline/" target="_blank">CodePipeline</a>
+          <a class="tech-tag" href="https://aws.amazon.com/cloudwatch/" target="_blank">CloudWatch</a>
+        </div>
+        <div class="proj-links">
+          <a href="#" class="btn-code">&#8997; Code</a>
+          <a href="#" class="btn-demo">&#8599; Blog</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 3 -->
+    <div class="project-card reveal delay-2">
+      <div class="proj-img" style="background:linear-gradient(135deg,#0f2027,#1a3a2a,#0f2b1a)">
+        <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">
+          <defs><marker id="ar3" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto"><path d="M0,0 L0,5 L5,2.5z" fill="rgba(16,185,129,.9)"/></marker></defs>
+          <rect x="4" y="58" width="62" height="44" rx="8" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.18)" stroke-width="1.2"/>
+          <text x="35" y="74" fill="white" font-family="monospace" font-size="7" text-anchor="middle">Local Machine</text>
+          <text x="35" y="85" fill="rgba(16,185,129,.8)" font-family="monospace" font-size="6.5" text-anchor="middle">OpenVPN</text>
+          <text x="35" y="95" fill="rgba(255,255,255,.35)" font-family="monospace" font-size="5.5" text-anchor="middle">Client</text>
+          <text x="104" y="70" fill="rgba(16,185,129,.55)" font-family="monospace" font-size="6" text-anchor="middle">Encrypted Tunnel</text>
+          <line x1="66" y1="80" x2="116" y2="80" stroke="#10b981" stroke-width="2" stroke-dasharray="4,2" marker-end="url(#ar3)"/>
+          <rect x="116" y="42" width="112" height="76" rx="10" fill="rgba(16,185,129,.04)" stroke="rgba(16,185,129,.28)" stroke-width="1.2" stroke-dasharray="4,3"/>
+          <text x="172" y="57" fill="rgba(16,185,129,.45)" font-family="monospace" font-size="7" text-anchor="middle">AWS EC2 (Public IP)</text>
+          <rect x="126" y="62" width="92" height="28" rx="7" fill="rgba(6,182,212,.18)" stroke="rgba(6,182,212,.55)" stroke-width="1.2"/>
+          <text x="172" y="74" fill="white" font-family="monospace" font-size="7" text-anchor="middle">Docker Container</text>
+          <text x="172" y="84" fill="rgba(255,255,255,.45)" font-family="monospace" font-size="6" text-anchor="middle">OpenVPN Server</text>
+          <rect x="126" y="96" width="92" height="18" rx="5" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
+          <text x="172" y="108" fill="rgba(255,255,255,.38)" font-family="monospace" font-size="6" text-anchor="middle">Security Group - Port 1194 UDP</text>
+          <line x1="228" y1="80" x2="248" y2="80" stroke="#10b981" stroke-width="1.4" stroke-dasharray="3,2" marker-end="url(#ar3)"/>
+          <circle cx="268" cy="80" r="26" fill="rgba(255,255,255,.02)" stroke="rgba(255,255,255,.1)" stroke-width="1.2"/>
+          <text x="268" y="77" fill="rgba(255,255,255,.45)" font-family="monospace" font-size="6.5" text-anchor="middle">Internet</text>
+          <text x="268" y="88" fill="rgba(255,255,255,.28)" font-family="monospace" font-size="5.5" text-anchor="middle">Masked IP</text>
+        </svg>
+        <span class="proj-img-label">Architecture Diagram</span>
+      </div>
+      <div class="proj-body">
+        <div class="proj-icon" style="background:linear-gradient(135deg,#10b981,#34d399)">&#128274;</div>
+        <h3 class="proj-name">Self-Hosted VPN on AWS</h3>
+        <p class="proj-desc">Instead of paying for a commercial VPN that might log your data, built a personal VPN from scratch on AWS. Deployed an OpenVPN server inside a Docker container on an EC2 instance with a configured Security Group. The local machine connects via the OpenVPN client, routing all traffic through the EC2 instance — full control, zero third-party trust.</p>
+        <div class="tech-tags">
+          <a class="tech-tag" href="https://aws.amazon.com/ec2/" target="_blank">EC2</a>
+          <a class="tech-tag" href="https://www.docker.com/" target="_blank">Docker</a>
+          <a class="tech-tag" href="https://openvpn.net/" target="_blank">OpenVPN</a>
+          <a class="tech-tag" href="https://aws.amazon.com/vpc/" target="_blank">VPC</a>
+          <a class="tech-tag" href="https://aws.amazon.com/vpc/" target="_blank">Security Groups</a>
+        </div>
+        <div class="proj-links">
+          <a href="#" class="btn-code">&#8997; Code</a>
+          <a href="#" class="btn-demo">&#8599; Blog</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ CERTS STRIP ══ -->
+<div class="certs-strip">
+  <div class="cert-item"><span class="ci-icon">&#9729;&#65039;</span><div><strong>AWS Certified</strong><small>Cloud Practitioner</small></div></div>
+  <div class="cert-item"><span class="ci-icon">&#127959;&#65039;</span><div><strong>AWS Certified</strong><small>Solutions Architect Associate</small></div></div>
+  <div class="cert-item"><span class="ci-icon">&#129695;</span><div><strong>Microsoft Certified</strong><small>Azure Fundamentals (AZ-900)</small></div></div>
+  <div class="cert-item"><span class="ci-icon">&#128225;</span><div><strong>In Progress</strong><small>AWS Advanced Networking · CompTIA Net+</small></div></div>
+</div>
+
+<!-- ══ EXPERIENCE ══ -->
+<section id="experience">
+  <div class="section-label reveal">Career &amp; Education</div>
+  <h2 class="section-title reveal">Work History</h2>
+  <p class="section-sub reveal">Hands-on IT experience and a cloud-focused academic path building toward a professional cloud engineering career.</p>
+  <div class="timeline">
+
+    <div class="tl-item reveal">
+      <div class="tl-icon">&#127891;</div>
+      <div>
+        <div class="tl-period">Expected Mar 2026</div>
+        <div class="tl-role">B.S. Cloud Computing &amp; Solutions</div>
+        <div class="tl-company">&#128205; Purdue University Global &middot; Remote</div>
+        <ul class="tl-bullets">
+          <li>Bachelor of Science in Cloud Computing and Solutions — building on the AAS foundation with advanced cloud architecture and security</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tl-item reveal delay-1">
+      <div class="tl-icon">&#127979;</div>
+      <div>
+        <div class="tl-period">Graduated May 2024</div>
+        <div class="tl-role">A.A.S. Cloud Computing &amp; Specialization</div>
+        <div class="tl-company">&#128205; Northern Virginia Community College &middot; Annandale, VA</div>
+        <ul class="tl-bullets">
+          <li>Associate of Applied Science in Cloud Computing with specialization focus on AWS core services, networking fundamentals, and virtualization platforms.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tl-item reveal delay-2">
+      <div class="tl-icon">&#128187;</div>
+      <div>
+        <div class="tl-period">Jun 2023 &ndash; Jul 2023</div>
+        <div class="tl-role">IT Intern</div>
+        <div class="tl-company">&#128205; Prince William County Public Schools &middot; Virginia</div>
+        <ul class="tl-bullets">
+          <li>Troubleshot hardware issues on student laptops across multiple schools in the district &mdash; totaling over 5,200 devices.</li>
+          <li>Fixed 50+ laptops using ShredOS to securely dismantle storage devices within regulatory compliance requirements.</li>
+          <li>Assisted with non-designated tasks including troubleshooting printer connectivity issues on the local area network.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tl-item reveal delay-3">
+      <div class="tl-icon">&#128424;&#65039;</div>
+      <div>
+        <div class="tl-period">Jul 2021 &ndash; May 2022</div>
+        <div class="tl-role">Copy &amp; Print Associate</div>
+        <div class="tl-company">&#128205; Office Depot Inc &middot; Virginia</div>
+        <ul class="tl-bullets">
+          <li>Managed and fulfilled print orders from customers, including reviewing and editing documents prior to printing.</li>
+          <li>Operated and maintained copy and print equipment; troubleshot hardware and software issues to ensure printer connectivity.</li>
+          <li>Provided exceptional customer service with accurate responses to questions and product recommendations.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ FOCUS ══ -->
+<section id="focus">
+  <div class="section-label reveal">What I'm Pursuing</div>
+  <h2 class="section-title reveal">Areas of Focus</h2>
+  <p class="section-sub reveal">Technologies and disciplines I'm actively building expertise in — from cloud security to open-source AI tools.</p>
+  <div class="focus-grid">
+    <div class="focus-card reveal" style="border-top-color:#2563eb">
+      <div class="focus-icon">&#127959;&#65039;</div>
+      <div class="focus-title">Cloud Architecture &amp; Security</div>
+      <div class="focus-desc">Designing secure, highly available AWS architectures using VPCs, private subnets, WAF, NACL, ACM, and IAM least-privilege models aligned with AWS Well-Architected principles.</div>
+      <div class="focus-tags"><span class="focus-tag">VPC</span><span class="focus-tag">WAF</span><span class="focus-tag">IAM</span><span class="focus-tag">ACM</span></div>
+    </div>
+    <div class="focus-card reveal delay-1" style="border-top-color:#f97316">
+      <div class="focus-icon">&#129302;</div>
+      <div class="focus-title">AI &amp; Open-Source Tools</div>
+      <div class="focus-desc">Integrating AI into cloud workflows using Comfy-UI for image generation pipelines, Gradio for ML interfaces, and CUDA-accelerated GPU compute on cloud instances.</div>
+      <div class="focus-tags"><span class="focus-tag">Comfy-UI</span><span class="focus-tag">Gradio</span><span class="focus-tag">Nvidia CUDA</span><span class="focus-tag">Open-source AI</span></div>
+    </div>
+    <div class="focus-card reveal delay-2" style="border-top-color:#10b981">
+      <div class="focus-icon">&#127758;</div>
+      <div class="focus-title">Advanced Networking</div>
+      <div class="focus-desc">Pursuing AWS Certified Advanced Networking &ndash; Specialty and CompTIA Network+ to deepen knowledge in hybrid connectivity, DNS, CDN, and cloud-native networking patterns.</div>
+      <div class="focus-tags"><span class="focus-tag">AWS Networking</span><span class="focus-tag">CompTIA Net+</span><span class="focus-tag">Route 53</span><span class="focus-tag">CloudFront</span></div>
+    </div>
+    <div class="focus-card reveal delay-3" style="border-top-color:#8b5cf6">
+      <div class="focus-icon">&#128230;</div>
+      <div class="focus-title">Containers &amp; Virtualization</div>
+      <div class="focus-desc">Hands-on containerization with Docker for self-hosted services on EC2, alongside experience with Hyper-V, VirtualBox, and Android Studio emulation for testing environments.</div>
+      <div class="focus-tags"><span class="focus-tag">Docker</span><span class="focus-tag">Hyper-V</span><span class="focus-tag">VirtualBox</span><span class="focus-tag">Android Studio</span></div>
+    </div>
+    <div class="focus-card reveal delay-1" style="border-top-color:#2563eb">
+      <div class="focus-icon">&#8734;&#65039;</div>
+      <div class="focus-title">DevOps &amp; CI/CD</div>
+      <div class="focus-desc">Building end-to-end automated pipelines with GitHub, AWS CodePipeline, CodeBuild, and CodeDeploy — pushing code changes to production without any manual steps.</div>
+      <div class="focus-tags"><span class="focus-tag">CodePipeline</span><span class="focus-tag">CodeBuild</span><span class="focus-tag">CodeDeploy</span><span class="focus-tag">Git</span></div>
+    </div>
+    <div class="focus-card reveal delay-2" style="border-top-color:#f97316">
+      <div class="focus-icon">&#128295;</div>
+      <div class="focus-title">Infrastructure as Code</div>
+      <div class="focus-desc">Currently learning and improving my ability to learn to spin up environments with code like Terraform and CloudFormation. Further expanding my knowledge on Linux and Bash Shell.</div>
+      <div class="focus-tags"><span class="focus-tag">Terraform</span><span class="focus-tag">CloudFormation</span><span class="focus-tag">Linux</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══ FOOTER ══ -->
+<footer id="contact">
+  <div>
+    <div class="footer-logo">john<span>.cloud</span></div>
+    <p style="margin-top:8px">Oakton, VA 22124 &middot; Open to cloud engineering roles</p>
+  </div>
+  <div class="footer-links" id="footer-links"></div>
+  <p>&copy; 2025 John Barr &middot; Built with &#9729;&#65039;</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
