@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
   links.forEach(function(l) {
     var a = document.createElement('a');
     a.href = l[1]; a.textContent = l[0];
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
     fl.appendChild(a);
   });
 
@@ -77,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var now = Date.now();
     if (now - lastTrail < 90) return;
     // suppress trail inside project cards and focus cards
-    if (e.target.closest('.project-card, .focus-card')) return;
+    if (e.target.closest('.project-card, .focus-card, nav, .certs-strip, #contact')) return;
     lastTrail = now;
     var el = document.createElement('div');
     el.className = 'trail';
@@ -122,74 +124,84 @@ document.addEventListener('DOMContentLoaded', function() {
   var SP = 30;  // dot spacing
   var T  = 0;   // global time
 
+  var SP = 30;  // dot spacing
+  var T  = 0;   // global time
+
   (function drawHero() {
-    T += 0.018;
-    hctx.clearRect(0, 0, heroCanvas.width, heroCanvas.height);
+      T += 0.018;
+      hctx.clearRect(0, 0, heroCanvas.width, heroCanvas.height);
 
-    var cols = Math.ceil(heroCanvas.width  / SP) + 2;
-    var rows = Math.ceil(heroCanvas.height / SP) + 2;
+      var cols = Math.ceil(heroCanvas.width  / SP) + 2;
+      var rows = Math.ceil(heroCanvas.height / SP) + 2;
 
-    for (var i = 0; i < cols; i++) {
-      for (var j = 0; j < rows; j++) {
-        var bx = i * SP;
-        var by = j * SP;
+      for (var i = 0; i < cols; i++) {
+        for (var j = 0; j < rows; j++) {
+          var bx = i * SP;
+          var by = j * SP;
 
-        // ── Wave 1: diagonal rolling wave ──
-        var wave1 = Math.sin((bx * 0.022) + (by * 0.012) + T * 1.8) * 0.5 + 0.5;
+          // ── Wave 1: diagonal rolling wave ──
+          var wave1 = Math.sin((bx * 0.022) + (by * 0.012) + T * 1.8) * 0.5 + 0.5;
 
-        // ── Wave 2: perpendicular wave ──
-        var wave2 = Math.sin((bx * 0.010) - (by * 0.025) + T * 1.2) * 0.5 + 0.5;
+          // ── Wave 2: perpendicular wave ──
+          var wave2 = Math.sin((bx * 0.010) - (by * 0.025) + T * 1.2) * 0.5 + 0.5;
 
-        // ── Wave 3: radial pulse from center ──
-        var cx = heroCanvas.width  / 2;
-        var cy = heroCanvas.height / 2;
-        var distCenter = Math.sqrt((bx-cx)*(bx-cx) + (by-cy)*(by-cy));
-        var wave3 = Math.sin(distCenter * 0.04 - T * 2.2) * 0.5 + 0.5;
+          // ── Wave 3: radial pulse from center ──
+          var cx = heroCanvas.width  / 2;
+          var cy = heroCanvas.height / 2;
+          var distCenter = Math.sqrt((bx-cx)*(bx-cx) + (by-cy)*(by-cy));
+          var wave3 = Math.sin(distCenter * 0.04 - T * 2.2) * 0.5 + 0.5;
 
-        // Blend all three waves
-        var waveBlend = (wave1 * 0.45) + (wave2 * 0.3) + (wave3 * 0.25);
+          // Blend all three waves
+          var waveBlend = (wave1 * 0.45) + (wave2 * 0.3) + (wave3 * 0.25);
 
-        // ── Mouse proximity influence ──
-        var distMouse = Math.sqrt((bx-hmx)*(bx-hmx) + (by-hmy)*(by-hmy));
-        var mouseInf  = Math.max(0, 1 - distMouse / 140);
+          // ── Mouse proximity ──
+          var distMouse = Math.sqrt((bx-hmx)*(bx-hmx) + (by-hmy)*(by-hmy));
+          var mouseInf  = Math.max(0, 1 - distMouse / 220);
+          var mouseBlue = mouseInf * mouseInf; // power curve: solid centre, soft edge
 
-        // ── Ripple influence from mouse trail ──
-        var rippleInf = 0;
-        for (var r = 0; r < ripples.length; r++) {
-          var rip = ripples[r];
-          var rd  = Math.sqrt((bx-rip.x)*(bx-rip.x) + (by-rip.y)*(by-rip.y));
-          var rWave = Math.sin(rd * 0.09 - rip.t * 3.5) * Math.max(0, 1 - rd / 180);
-          rippleInf += rWave * Math.max(0, 1 - rip.t / 40);
+          // Hard cutoff — fully kill waves inside a larger radius than the blue zone
+          // so there's zero overlap between wave animation and the blue area
+          var waveWeight = distMouse < 260 ? Math.max(0, (distMouse - 200) / 60) : 1;
+
+          // ── Ripple influence (also suppressed near cursor) ──
+          var rippleInf = 0;
+          for (var r = 0; r < ripples.length; r++) {
+            var rip = ripples[r];
+            var rd  = Math.sqrt((bx-rip.x)*(bx-rip.x) + (by-rip.y)*(by-rip.y));
+            var rWave = Math.sin(rd * 0.09 - rip.t * 3.5) * Math.max(0, 1 - rd / 180);
+            rippleInf += rWave * Math.max(0, 1 - rip.t / 40);
+          }
+          rippleInf = Math.max(0, Math.min(1, rippleInf)) * waveWeight;
+
+          // Effective wave blend — zeroed out inside cursor zone
+          var wave = waveBlend * waveWeight;
+
+          // Dot size
+          var radius = 1.5 + wave * 4.5 + mouseBlue * 4.0 + rippleInf * 2.0;
+
+          // Opacity — cursor zone is fixed solid, no pulsing
+          var opacity = 0.12 + wave * 0.45 + mouseBlue * 0.75 + rippleInf * 0.2;
+          opacity = Math.min(0.92, opacity);
+
+          // Color — hard lerp from grey to #2563eb, waves have zero influence
+          var greyR = 160, greyG = 175, greyB = 192;
+          var blueR =  37, blueG =  99, blueB = 235;
+          var r255 = Math.round(greyR + (blueR - greyR) * mouseBlue);
+          var g255 = Math.round(greyG + (blueG - greyG) * mouseBlue);
+          var b255 = Math.round(greyB + (blueB - greyB) * mouseBlue);
+
+          hctx.beginPath();
+          hctx.arc(bx, by, radius, 0, Math.PI * 2);
+          hctx.fillStyle = 'rgba(' + r255 + ',' + g255 + ',' + b255 + ',' + opacity + ')';
+          hctx.fill();
         }
-        rippleInf = Math.max(0, Math.min(1, rippleInf));
-
-        // Combine all influences
-        var totalInf = waveBlend + mouseInf * 0.6 + rippleInf * 0.5;
-
-        // Dot size — much bigger on wave peaks
-        var radius  = 1.5 + waveBlend * 4.5 + mouseInf * 3.0 + rippleInf * 2.5;
-
-        // Opacity — more visible waves
-        var opacity = 0.12 + waveBlend * 0.45 + mouseInf * 0.5 + rippleInf * 0.4;
-        opacity = Math.min(0.88, opacity);
-
-        // Color — grey base for waves, blue only near cursor
-        var r255 = Math.round(160 - mouseInf * 123 - rippleInf * 60);
-        var g255 = Math.round(175 - mouseInf * 138 - rippleInf * 80);
-        var b255 = Math.round(192 + mouseInf * 63  + rippleInf * 40);
-
-        hctx.beginPath();
-        hctx.arc(bx, by, radius, 0, Math.PI * 2);
-        hctx.fillStyle = 'rgba(' + r255 + ',' + g255 + ',' + b255 + ',' + opacity + ')';
-        hctx.fill();
       }
-    }
 
-    // Age ripples
-    for (var r = 0; r < ripples.length; r++) { ripples[r].t += 1; }
-    ripples = ripples.filter(function(rp) { return rp.t < 50; });
+      // Age ripples
+      for (var r = 0; r < ripples.length; r++) { ripples[r].t += 1; }
+      ripples = ripples.filter(function(rp) { return rp.t < 50; });
 
-    requestAnimationFrame(drawHero);
+      requestAnimationFrame(drawHero);
   })();
 
   // ── PAGE DOT CANVAS (outside hero — static subtle dots) ──
