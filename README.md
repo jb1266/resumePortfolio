@@ -54,7 +54,7 @@ Amazon CloudWatch
 | Service | Role |
 |---|---|
 | **AWS CodePipeline** | CI/CD pipeline — source stage watches this GitHub repo, deploy stage pushes to S3 |
-| **Amazon S3** | Hosts the static site files (`index.html`). Public access is fully blocked. |
+| **Amazon S3** | Hosts the static site files (`index.html, script.js, style.css`). Public access is fully blocked. |
 | **Amazon CloudFront** | CDN distribution serving the site globally over HTTPS from S3 |
 | **AWS IAM** | IAM role grants CloudFront-only access to the S3 bucket — no direct public S3 access |
 | **AWS WAF** | Web Application Firewall attached to the CloudFront distribution for threat protection |
@@ -77,7 +77,7 @@ Amazon CloudWatch
 Every commit pushed to this repository automatically triggers the CodePipeline:
 
 1. **Source Stage** — CodePipeline detects the new commit from this GitHub repo
-2. **Deploy Stage** — The updated `index.html` is deployed directly to the S3 bucket
+2. **Deploy Stage** — The updated `index.html, script.js, or style.css` is deployed directly to the S3 bucket
 3. **CloudFront** serves the latest version from the edge within seconds
 
 No manual intervention required after the initial pipeline setup.
@@ -88,7 +88,9 @@ No manual intervention required after the initial pipeline setup.
 
 ```
 /
-└── index.html      # Complete single-file portfolio (HTML + CSS + JS)
+└── index.html      # HTML file
+└── style.css       # CSS file
+└── script.js       # js file
 └── README.md       # This file
 ```
 
