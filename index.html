@@ -91,22 +91,20 @@
       <div class="proj-body">
         <div class="proj-icon" style="background:linear-gradient(135deg,#8b5cf6,#a78bfa)">&#128737;</div>
         <h3 class="proj-name">Security-Focused Web Hosting with CI/CD (EC2)</h3>
-        <p class="proj-desc">Hosts a web app on EC2 instances in a private subnet, fronted by an Application Load Balancer in the public subnet with WAF and HTTPS via ACM. A full CI/CD pipeline listens to GitHub repo changes through CodePipeline &#8594; CodeBuild &#8594; CodeDeploy, updating tagged EC2 instances via AWS Systems Manager. NACL provides network-layer security.</p>
+        <p class="proj-desc">Hosts a web app on EC2 instances in a private subnet, fronted by an Application Load Balancer in the public subnet with WAF. A full CI/CD pipeline listens to GitHub repo changes through CodePipeline &#8594; CodeDeploy, updating tagged EC2 instances via AWS Systems Manager. NACL provides network-layer security. ASG will trigger CodePipeline on new EC2 Instances via SSM Documents</p>
         <div class="tech-tags">
           <a class="tech-tag" href="https://aws.amazon.com/ec2/" target="_blank">EC2</a>
           <a class="tech-tag" href="https://aws.amazon.com/systems-manager/" target="_blank">Systems Manager</a>
           <a class="tech-tag" href="https://aws.amazon.com/codepipeline/" target="_blank">CodePipeline</a>
-          <a class="tech-tag" href="https://aws.amazon.com/codebuild/" target="_blank">CodeBuild</a>
           <a class="tech-tag" href="https://aws.amazon.com/codedeploy/" target="_blank">CodeDeploy</a>
           <a class="tech-tag" href="https://aws.amazon.com/elasticloadbalancing/" target="_blank">ALB</a>
           <a class="tech-tag" href="https://aws.amazon.com/waf/" target="_blank">WAF</a>
-          <a class="tech-tag" href="https://aws.amazon.com/certificate-manager/" target="_blank">ACM</a>
-          <a class="tech-tag" href="https://aws.amazon.com/vpc/" target="_blank">VPC / NACL</a>
+          <a class="tech-tag" href="https://aws.amazon.com/vpc/" target="_blank">VPC / NACL / SG</a>
           <a class="tech-tag" href="https://github.com" target="_blank">GitHub</a>
         </div>
         <div class="proj-links">
-          <a href="#" class="btn-code">&#8997; GitHub</a>
-          <a href="#" class="btn-demo">&#8599; Blog</a>
+          <a href="https://github.com/jb1266/Capstone/" class="btn-code" target="_blank" rel="noopener noreferrer">&#8997; GitHub</a>
+          <a href="https://medium.com/p/bd9252481d3d?" class="btn-demo">&#8599; Blog</a>
         </div>
       </div>
     </div>
