@@ -184,18 +184,20 @@
       </div>
       <div class="proj-body">
         <div class="proj-icon" style="background:linear-gradient(135deg,#10b981,#34d399)">&#128274;</div>
-        <h3 class="proj-name">Self-Hosted VPN on AWS</h3>
-        <p class="proj-desc">Instead of paying for a commercial VPN that might log your data, built a personal VPN from scratch on AWS. Deployed an OpenVPN server inside a Docker container on an EC2 instance with a configured Security Group. The local machine connects via the OpenVPN client, routing all traffic through the EC2 instance — full control, zero third-party trust.</p>
+        <h3 class="proj-name">Self-Hosted VPN on AWS with ECS, EFS, CloudFormation, Secrets Manager</h3>
+        <p class="proj-desc">Instead of paying for a commercial VPN that might log your data, built a personal VPN from scratch on AWS. Deployed an open source VPN application inside a Docker container on an EC2 instance through ECS. CloudFormation was used to automate the creation of ASG, EC2 launch template, and EC2 provision. Secrets Manager to store credentials and EFS to ensure persistent storage</p>
         <div class="tech-tags">
-          <a class="tech-tag" href="https://aws.amazon.com/ec2/" target="_blank">EC2</a>
+          <a class="tech-tag" href="https://aws.amazon.com/ecs/" target="_blank">ECS</a>
+          <a class="tech-tag" href="https://aws.amazon.com/cloudformation/" target="_blank">CloudFormation</a>
+          <a class="tech-tag" href="https://aws.amazon.com/efs/" target="_blank">EFS</a>
+          <a class="tech-tag" href="https://aws.amazon.com/secrets-manager/" target="_blank">Secrets Manager</a>
           <a class="tech-tag" href="https://www.docker.com/" target="_blank">Docker</a>
-          <a class="tech-tag" href="https://openvpn.net/" target="_blank">OpenVPN</a>
           <a class="tech-tag" href="https://aws.amazon.com/vpc/" target="_blank">VPC</a>
           <a class="tech-tag" href="https://aws.amazon.com/vpc/" target="_blank">Security Groups</a>
         </div>
         <div class="proj-links">
-          <a href="#" class="btn-code">&#8997; GitHub</a>
-          <a href="#" class="btn-demo">&#8599; Blog</a>
+          <a href="https://github.com/jb1266/vpn-proj" class="btn-code" target="_blank" rel="noopener noreferrer">&#8997; GitHub</a>
+          <a href="https://medium.com/p/aabeb0b1d727" class="btn-demo" target="_blank" rel="noopener noreferrer">&#8599; Blog</a>
         </div>
       </div>
     </div>
